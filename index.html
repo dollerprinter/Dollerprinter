@@ -11,6 +11,16 @@
   <h1>DollerPrinter Dashboard</h1>
   <a class="btn" href="https://oauth.deriv.com/oauth2/authorize?app_id=33B2bsj1MFQELw9JerOY1&scope=read,trade,admin&redirect_uri=https://dollerprinter.vercel.app/callback">
     Login with Deriv
-  </a>
+  </a><script>
+const token = localStorage.getItem('deriv_token');
+const loginBtn = document.querySelector('.btn');
+
+if(token && loginBtn) {
+  loginBtn.style.display = 'none';
+  const div = document.createElement('div');
+  div.innerHTML = `<h2>Welcome!</h2><p>Login successful! Token: ${token.slice(0,10)}...</p>`;
+  document.body.appendChild(div);
+}
+</script>
 </body>
 </html>
