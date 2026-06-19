@@ -12,7 +12,7 @@
   <a class="btn" href="https://oauth.deriv.com/oauth2/authorize?app_id=33B2bsj1MFQELw9JerOY1&scope=read,trade,admin&redirect_uri=https://dollerprinter.vercel.app/callback">
     Login with Deriv
   </a><script>
-const token = localStorage.getItem('deriv_token');
+const token = localStorage.getItem('deriv_token') || localStorage.getItem('token');
 const loginBtn = document.querySelector('.btn');
 
 if(token && loginBtn) {
