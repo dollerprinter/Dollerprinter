@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Authenticating...</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token1');
+    const acct = params.get('acct1');
+    if(token) {
+      localStorage.setItem('deriv_token', token);
+      localStorage.setItem('deriv_acct', acct);
+      document.body.innerHTML = '<h2>Login successful! Redirecting...</h2>';
+      setTimeout(()=>window.location='index.html', 2000);
+    } else {
+      document.body.innerHTML = '<h2>Error: No token received</h2>';
+    }
+  </script>
+</head>
+<body><h2>Authenticating...</h2></body>
+</html>
