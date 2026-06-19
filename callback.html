@@ -2,8 +2,8 @@
 <html><body style="text-align:center;padding-top:50px;font-family:sans-serif">
 Authenticating...
 <script>
-const token = new URLSearchParams(window.location.search).get('token1');
-if(token) {
+const params = new URLSearchParams(window.location.search);
+const token = params.get('token1') || params.get('token') || params.get('acct1');
   localStorage.setItem('deriv_token', token);
   window.location.replace('https://dollerprinter.vercel.app/');
 } else {
